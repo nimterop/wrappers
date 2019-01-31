@@ -20,4 +20,4 @@ test "import wrappers":
   pros: simpler, faster
   cons: can't run the rest if some dependency for 1 test is missing
   ]#
-  runCmdCheck &"nim c -r {wrappersDir()}/soloud/demo.nim -h"
+  runCmdCheck &"nim c -r {formulasDir()}/soloud/demo.nim -h"

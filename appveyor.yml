@@ -1,3 +1,6 @@
+# TODO: this should be simplified; and factored to avoid duplication with nimterop/appveyor.yml
+# maybe a read-only auto-generated file from a common template
+
 version: '{build}'
 
 image:
@@ -36,7 +39,7 @@ for:
       7z x -y "nim-%NIM_VERSION%_x%ARCH%.zip"> nul &&
       del "nim-%NIM_VERSION%_x%ARCH%.zip")
     - SET PATH=c:\binaries\mingw%ARCH%\bin;c:\binaries\nim-%NIM_VERSION%\bin;%USERPROFILE%\.nimble\bin;%PATH%
-    - CD c:\projects\nimterop
+    - CD c:\projects\nimterop_wrappers
 
   on_finish:
     - 7z a -r buildlogs-win-pkgs.zip %USERPROFILE%\.nimble\pkgs
@@ -66,7 +69,7 @@ for:
         ./koch nimble -d:release;
       fi
     - export PATH=/home/appveyor/binaries/nim-$NIM_VERSION/bin:~/.nimble/bin:$PATH
-    - cd /home/appveyor/projects/nimterop
+    - cd /home/appveyor/projects/nimterop_wrappers
 
   on_finish:
     - zip -r -q buildlogs-lin-pkgs.zip ~/.nimble/pkgs
@@ -82,6 +85,6 @@ build_script:
 
 test_script:
   - nimble test
-  - nimble --nimbleDir:test install nimterop -y
+  - nimble --nimbleDir:`pwd`/build/fakenimble install -y "https://github.com/nimterop/wrappers"
 
 deploy: off

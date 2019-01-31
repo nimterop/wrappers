@@ -1,6 +1,10 @@
 import std/[os,httpclient]
-import wrappers/soloud/wrapper
 import wrapperspkg/[paths]
+#[
+from outside this repo, use: 
+import wrappers/formulas/soloud/wrapper
+]#
+import "."/wrapper
 
 let urlDefault = "https://freewavesamples.com/files/Yamaha-V50-Rock-Beat-120bpm.wav"
 

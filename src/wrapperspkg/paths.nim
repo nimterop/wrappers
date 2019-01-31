@@ -11,8 +11,8 @@ proc reopBuildDir*(): string =
 proc repoSrcDir*(): string =
   repoRoot() / "src"
 
-proc wrappersDir*(): string =
-  repoSrcDir() / "wrappers"
+proc formulasDir*(): string =
+  repoSrcDir() / "formulas"
 
 proc repoExePath*(): string =
   repoRoot() / ("wrappers".addFileExt ExeExt)

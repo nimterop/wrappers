@@ -4,12 +4,15 @@ Tool to help manage wrappers, eg:
 * generate individual nimble pacakges
 ]#
 
-import wrapperspkg/submodule
+import std/[os]
+import wrapperspkg/paths
 
 proc main() =
-  echo(getWelcomeMessage())
+  var wrappers: seq[string]
+  for kind, path in walkDir(wrappersDir(), relative = true):
+    wrappers.add path
+  echo wrappers
 
 when isMainModule:
   import cligen
   dispatch(main)
-

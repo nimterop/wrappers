@@ -12,7 +12,7 @@ proc main(file = "", url = urlDefault, volume = 10.0) =
   var file = file
   if file == "":
     var content = newHttpClient().getContent(url)
-    file = reopBuildDir() / "D20190131T001105.wav"
+    file = repoBuildDir() / "D20190131T001105.wav"
     file.writeFile content
 
   var s = Soloud_create()

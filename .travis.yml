@@ -23,7 +23,7 @@ install:
 
 script:
   - set -e
-  - nimble install -y
-  - nimble test
+  # - nimble install -y
+  # - nimble test
   # see also: https://github.com/nimterop/wrappers?subdir=foo
-  - nimble --nimbleDir:`pwd`/build/fakenimble install -y "https://github.com/nimterop/wrappers"
+  - nimble --verbose --nimbleDir:`pwd`/build/fakenimble install -y "https://github.com/nimterop/wrappers"

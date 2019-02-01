@@ -1,6 +1,6 @@
 import std/[os]
 import nimterop/[cimport, git]
-import wrapperspkg/[paths]
+import wrappers/[paths]
 
 const
   # TODO: DRY (no: soloud)

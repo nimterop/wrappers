@@ -12,7 +12,7 @@ proc repoSrcDir*(): string =
   repoRoot() / "src"
 
 proc formulasDir*(): string =
-  repoSrcDir() / "wrapperspkg" / "formulas"
+  repoSrcDir() / "wrappers" / "formulas"
 
 proc repoExePath*(): string =
   repoRoot() / ("wrappers".addFileExt ExeExt)

@@ -25,5 +25,5 @@ From your project:
 * add to your nimble file: `requires "wrappers"`
 * import a wrapper (eg `soloud`) as follows:
 ```
-import wrapperspkg/formulas/soloud
+import wrappers/formulas/soloud
 ```

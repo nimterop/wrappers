@@ -6,7 +6,9 @@
 
 # Wrappers for Nim based on nimterop
 
-PR's welcome!
+## Note
+* PR's welcome!
+* Still in alpha, the API is subject to change.
 
 ## Goal
 * repository of thin wrappers that are kept up to date with latest nimterop developments

@@ -39,7 +39,7 @@ for:
       7z x -y "nim-%NIM_VERSION%_x%ARCH%.zip"> nul &&
       del "nim-%NIM_VERSION%_x%ARCH%.zip")
     - SET PATH=c:\binaries\mingw%ARCH%\bin;c:\binaries\nim-%NIM_VERSION%\bin;%USERPROFILE%\.nimble\bin;%PATH%
-    - CD c:\projects\nimterop_wrappers
+    - CD c:\projects\wrappers
 
   on_finish:
     - 7z a -r buildlogs-win-pkgs.zip %USERPROFILE%\.nimble\pkgs
@@ -69,7 +69,7 @@ for:
         ./koch nimble -d:release;
       fi
     - export PATH=/home/appveyor/binaries/nim-$NIM_VERSION/bin:~/.nimble/bin:$PATH
-    - cd /home/appveyor/projects/nimterop_wrappers
+    - cd /home/appveyor/projects/wrappers
 
   on_finish:
     - zip -r -q buildlogs-lin-pkgs.zip ~/.nimble/pkgs

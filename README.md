@@ -16,3 +16,12 @@
   - https://github.com/Homebrew/brew => https://github.com/nimterop/nimterop
   - https://github.com/Homebrew/homebrew-core => https://github.com/nimterop/wrappers
   - `brew` command => `wrappers` command
+
+## Usage
+
+From your project:
+* add to your nimble file: `requires "wrappers"`
+* import a wrapper (eg `soloud`) as follows:
+```
+import wrapperspkg/formulas/soloud
+```

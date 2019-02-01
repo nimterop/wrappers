@@ -4,7 +4,7 @@ import wrappers/[paths]
 
 const
   # TODO: DRY (no: soloud)
-  baseDir = reopBuildDir()/"soloud"
+  baseDir = repoBuildDir()/"soloud"
   incl = baseDir/"include"
   src = baseDir/"src"
 

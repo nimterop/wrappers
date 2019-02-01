@@ -4,7 +4,7 @@ proc repoRoot*(): string =
   # TODO: check whether nim/nimble has a syntax for that eg: "$projectDir/../src" (that one is different though; also, that probably can't be used to return a string?)
   currentSourcePath.parentDir.parentDir.parentDir
 
-proc reopBuildDir*(): string =
+proc repoBuildDir*(): string =
   ## all generated files go under here (gitignored)
   repoRoot() / "build"
 
@@ -19,4 +19,4 @@ proc repoExeSrcPath*(): string =
 
 proc repoExePath*(): string =
   # TODO: keep in sync with nimble bin
-  reopBuildDir() / "wrappers" / ("nimwrap".addFileExt ExeExt)
+  repoBuildDir() / "wrappers" / ("nimwrap".addFileExt ExeExt)

@@ -11,20 +11,12 @@ const
 static:
   gitPull("https://github.com/jarikomppa/soloud", baseDir, "include/*\nsrc/*\n")
 
-cDisableCaching()
-
-cOverride:
-  type
-    Soloud* = pointer
-    AlignedFloatBuffer* = pointer
-
-  proc Soloud_destroy*(aSoloud: ptr Soloud) {.importc: "Soloud_destroy", header: cSearchPath(incl/"soloud_c.h").}
-
-# todo: factor common parts with nimtero/tests/tsoloud.nim
-cSkipSymbol("WavStream_stop", "WavStream_setFilter")
-
 cIncludeDir(incl)
 
+#[
+TODO: should allow building in the way recommended by upstream soloud library,
+using `genie`
+]#
 when defined(osx):
   cDefine("WITH_COREAUDIO")
   {.passL: "-framework CoreAudio -framework AudioToolbox".}

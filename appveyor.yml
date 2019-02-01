@@ -39,7 +39,7 @@ for:
       7z x -y "nim-%NIM_VERSION%_x%ARCH%.zip"> nul &&
       del "nim-%NIM_VERSION%_x%ARCH%.zip")
     - SET PATH=c:\binaries\mingw%ARCH%\bin;c:\binaries\nim-%NIM_VERSION%\bin;%USERPROFILE%\.nimble\bin;%PATH%
-    - CD c:\projects\wrappers
+    - CD %APPVEYOR_BUILD_FOLDER%
 
   on_finish:
     - 7z a -r buildlogs-win-pkgs.zip %USERPROFILE%\.nimble\pkgs
@@ -56,6 +56,8 @@ for:
       - image: Ubuntu
 
   install:
+    - set -e
+    - set -u
     - if [ ! -e /home/appveyor/binaries ]; then
         echo $NIM_VERSION &&
         mkdir /home/appveyor/binaries &&
@@ -69,9 +71,10 @@ for:
         ./koch nimble -d:release;
       fi
     - export PATH=/home/appveyor/binaries/nim-$NIM_VERSION/bin:~/.nimble/bin:$PATH
-    - cd /home/appveyor/projects/wrappers
+    - cd $APPVEYOR_BUILD_FOLDER
 
   on_finish:
+    set -e
     - zip -r -q buildlogs-lin-pkgs.zip ~/.nimble/pkgs
     - appveyor PushArtifact buildlogs-lin-pkgs.zip
     - zip -r -q buildlogs-lin-projects.zip /home/appveyor/projects

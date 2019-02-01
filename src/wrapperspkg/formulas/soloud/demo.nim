@@ -1,9 +1,5 @@
 import std/[os,httpclient]
 import wrapperspkg/[paths]
-#[
-from outside this repo, use: (CHECKME); TODO: simplify
-import wrappers/wrapperspkg/formulas/soloud/wrapper
-]#
 import "."/wrapper
 
 let urlDefault = "https://freewavesamples.com/files/Yamaha-V50-Rock-Beat-120bpm.wav"

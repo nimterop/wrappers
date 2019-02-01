@@ -1,3 +1,8 @@
+#[
+TODO:
+* add isMainModule tests
+]#
+
 import std/[os]
 import nimterop/[cimport, git]
 import wrappers/lib/paths

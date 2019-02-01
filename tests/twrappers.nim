@@ -1,6 +1,8 @@
 #[
 TODO:
-test for `nim c` and `nim cpp`; it matters are some wrappers may make assumptions as to what language is used
+* test for `nim c` and `nim cpp`; it matters are some wrappers may make assumptions as to what language is used
+
+* test for files with `isMainModule`
 ]#
 import std/[os,unittest,strformat]
 

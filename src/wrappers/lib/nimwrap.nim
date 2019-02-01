@@ -19,7 +19,12 @@ proc main(action = list) =
   of list:
     var wrappers: seq[string]
     for kind, path in walkDir(formulasDir(), relative = true):
-      # TODO: exclude `libDir`
+      #[
+      TODO: exclude some files, eg:
+      `libDir`
+      also, don't show both foo and foo.nim
+      @["readme.md", "lib", "math.nim", "soloud", "soloud.nim"]
+      ]#
       wrappers.add path
     echo wrappers
 

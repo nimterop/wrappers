@@ -1,6 +1,10 @@
+#[
+TODO:
+test for `nim c` and `nim cpp`; it matters are some wrappers may make assumptions as to what language is used
+]#
 import std/[os,unittest,strformat]
 
-import wrapperspkg/[paths]
+import wrappers/[paths]
 
 proc warnSkipped(cmd: string) =
   echo "CAUTION: test skipped: " & cmd
@@ -14,7 +18,8 @@ proc runCmdCheck(cmd: string) =
     check false
 
 test "wrappers exe":
-  runCmdCheck &"nim c -r {repoSrcDir()}/wrappers.nim -h"
+  # note: `nimble build` should already build `repoExePath` (wrappers binary) but this makes `nimble test` standalone
+  runCmdCheck &"nim c -o:{reopBuildDir()}/wrappers_temp -r {repoSrcDir()}/wrappers.nim -h"
 
 test "import wrappers":
   #[

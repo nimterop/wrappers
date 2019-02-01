@@ -5,7 +5,7 @@ TODO:
 ]#
 
 import std/[os]
-import wrapperspkg/paths
+import wrappers/paths
 
 type Action = enum
   list,

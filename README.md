@@ -27,3 +27,6 @@ From your project:
 ```
 import wrappers/soloud
 ```
+
+## Note
+* some modules may require passing `--clang.linkerexe:g++ -d:ssl` flags to nim, pending https://github.com/nimterop/wrappers/issues/21

@@ -1,8 +1,8 @@
 import std/[os,httpclient]
 import wrapperspkg/[paths]
 #[
-from outside this repo, use: 
-import wrappers/formulas/soloud/wrapper
+from outside this repo, use: (CHECKME); TODO: simplify
+import wrappers/wrapperspkg/formulas/soloud/wrapper
 ]#
 import "."/wrapper
 

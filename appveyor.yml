@@ -85,6 +85,7 @@ build_script:
 
 test_script:
   - nimble test
-  - nimble --nimbleDir:`pwd`/build/fakenimble install -y "https://github.com/nimterop/wrappers"
+  # see D20190131T164901
+  # - nimble --nimbleDir:`pwd`/build/fakenimble install -y "https://github.com/nimterop/wrappers"
 
 deploy: off

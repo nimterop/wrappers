@@ -14,5 +14,9 @@ proc repoSrcDir*(): string =
 proc formulasDir*(): string =
   repoSrcDir() / "wrappers" / "formulas"
 
+proc repoExeSrcPath*(): string =
+  repoSrcDir() / "wrappers" / "nimwrap.nim"
+
 proc repoExePath*(): string =
-  repoRoot() / ("wrappers".addFileExt ExeExt)
+  # TODO: keep in sync with nimble bin
+  reopBuildDir() / "wrappers" / ("nimwrap".addFileExt ExeExt)

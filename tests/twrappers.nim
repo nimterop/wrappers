@@ -10,16 +10,20 @@ proc warnSkipped(cmd: string) =
   echo "CAUTION: test skipped: " & cmd
 
 proc runCmdCheck(cmd: string) =
-  ## calls `check`, ie on error, fail after all commands are run instead of immediately
   echo (runCmdCheck: cmd)
   let ret = execShellCmd(cmd)
   if ret != 0:
     echo "runCmdCheck failed: " & $(ret: ret, cmd: cmd)
-    check false
+    doAssert false
+    # TODO: `check false` instead so that on error, fails after all commands are run instead of immediately
+    # however, `check false` doesn't show stacktrace so std/unittest check needs to be fixed first
 
 test "wrappers exe":
-  # note: `nimble build` should already build `repoExePath` (wrappers binary) but this makes `nimble test` standalone
-  runCmdCheck &"nim c -o:{reopBuildDir()}/wrappers_temp -r {repoSrcDir()}/wrappers.nim -h"
+  # note: `nimble build` should already build `repoExePath` but this makes `nimble test` standalone and we can build with different settings (eg `nim cpp`)
+  let exe = repoExePath()
+  let (dir, name, ext) = splitFile(exe)
+  let exe2 = dir / (name & ".temp1" & ext)
+  runCmdCheck &"nim c -o:{exe2} -r {repoExeSrcPath()} -h"
 
 test "import wrappers":
   #[

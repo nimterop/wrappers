@@ -1,6 +1,8 @@
+[//]: # (this is a hidden comment)
+
 [![Chat on Gitter](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/nimgen/Lobby)
 
-[//]: # (TODO: appveyor Build status)
+[![Build status](https://ci.appveyor.com/api/projects/status/ktoux8hl57k29uox/branch/master?svg=true)](https://ci.appveyor.com/project/genotrance/wrappers/branch/master)
 
 [![Build Status](https://travis-ci.org/nimterop/nimterop.svg?branch=master)](https://travis-ci.org/nimterop/nimterop)
 

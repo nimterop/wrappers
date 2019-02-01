@@ -4,7 +4,7 @@ test for `nim c` and `nim cpp`; it matters are some wrappers may make assumption
 ]#
 import std/[os,unittest,strformat]
 
-import wrappers/[paths]
+import wrappers/lib/paths
 
 proc warnSkipped(cmd: string) =
   echo "CAUTION: test skipped: " & cmd

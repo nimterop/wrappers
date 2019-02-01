@@ -19,6 +19,7 @@ proc main(action = list) =
   of list:
     var wrappers: seq[string]
     for kind, path in walkDir(formulasDir(), relative = true):
+      # TODO: exclude `libDir`
       wrappers.add path
     echo wrappers
 

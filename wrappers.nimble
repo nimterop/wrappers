@@ -7,7 +7,7 @@ license       = "MIT"
 
 srcDir        = "src"
 
-bin = @["wrappers/nimwrap"]
+bin = @["wrappers/lib/nimwrap"]
 binDir = "build"
 
 installExt    = @["nim", "nims", "cfg"]
